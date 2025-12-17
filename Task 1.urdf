@@ -1,4 +1,5 @@
 <robot name = "quadrotor">
+<!--For Battery Box-->
 	<link name = "body_link">
 		<visual name = "">
         	<origin xyz = "0 0 0.06" rpy = "0 0 0"/>
@@ -10,6 +11,7 @@
 		</material>
 		</visual>
 	</link>
+<!--For Arms of the drone-->
 	<link name = "arm1_link">
 		<visual name = "" >
 		<origin xyz = "0.15 0 0" />
@@ -58,6 +60,7 @@
  		</visual>
 
  	</link>
+<!--For Motors-->
 	<link name = "motor1_link">
  		<visual name = "" >
  		<origin xyz = "0 0 0" />
@@ -106,6 +109,7 @@
  		</visual>
 
  	</link>
+<!--For Propellers/Fans of the drone-->
 	<link name = "fan1_link">
  		<visual name = "" >
  		<origin xyz = "0 0 0" />
@@ -156,7 +160,7 @@
  	</link>
 
 
-
+<!--For joints between arms and battery box-->
         <joint name = "arm1_joint" type= "fixed">
 		<parent link = "body_link" />
 		<child link = "arm1_link" />
@@ -177,6 +181,7 @@
 		<child link = "arm4_link" />
 	<origin xyz= "0 -0.15 0.06" />
 	</joint>
+<!--For Joints between Motor and Arms-->
         <joint name = "motor1_joint" type= "fixed">
 		<parent link = "arm1_link" />
 		<child link = "motor1_link" />
@@ -197,6 +202,7 @@
 		<child link = "motor4_link" />
 		<origin xyz= "0 -0.25 0.07" />
 	</joint>
+<!--For joints between motor and propellers-->
 	<joint name = "fan1_joint" type= "continuous">
 		<parent link = "motor1_link" />
 		<child link = "fan1_link" />
@@ -221,6 +227,7 @@
 		<origin xyz= "0 0 0.021" />
 		<axis xyz = "0 0 1" />
 	</joint>
+
 
 
 </robot>
